@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
               CupertinoDialogAction(
                 isDefaultAction: true,
                 child: Text('Add'),
-                onPressed: () =>  addBandToList(inputName),
+                onPressed: () => addBandToList(inputName),
               ),
               CupertinoDialogAction(
                 isDestructiveAction: true,
@@ -199,7 +199,22 @@ class _HomePageState extends State<HomePage> {
     return Container(
       width: double.infinity,
       height: 200,
-      child: PieChart(dataMap: dataMap),
+      child: PieChart(
+        dataMap: dataMap,
+        colorList: [
+          Colors.blue[100],
+          Colors.blue[300],
+          Colors.blue[400],
+          Colors.blue,
+          Colors.blue[600],
+          Colors.blue[800]
+        ],
+        ringStrokeWidth: 5,
+        chartValuesOptions: ChartValuesOptions(
+            decimalPlaces: 0,
+            showChartValueBackground: false,
+            chartValueStyle: TextStyle(color: Colors.black)),
+      ),
     );
   }
 }
